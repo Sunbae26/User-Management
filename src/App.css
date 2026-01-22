@@ -1,0 +1,338 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://static.wixstatic.com/media/bde5c2_93c94dfb96ac4d8198fe3e76fa0349bc~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/bde5c2_93c94dfb96ac4d8198fe3e76fa0349bc~mv2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 40px 20px;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("https://static.wixstatic.com/media/bde5c2_93c94dfb96ac4d8198fe3e76fa0349bc~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/bde5c2_93c94dfb96ac4d8198fe3e76fa0349bc~mv2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(3px);
+  z-index: -1;
+}
+
+.App {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  overflow-x: auto;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.App::before {
+  content: "User Management System";
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e3a8a;
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #3b82f6;
+}
+
+.bp4-html-table.modifier {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 0 auto;
+}
+
+.bp4-html-table.modifier thead {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+}
+
+.bp4-html-table.modifier thead th {
+  padding: 16px 20px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+}
+
+.bp4-html-table.modifier thead th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.bp4-html-table.modifier thead th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.bp4-html-table.modifier tbody tr {
+  background: rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+.bp4-html-table.modifier tbody tr:nth-child(even) {
+  background: rgba(239, 246, 255, 0.7);
+}
+
+.bp4-html-table.modifier tbody tr:hover {
+  background: rgba(219, 234, 254, 0.8);
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.bp4-html-table.modifier tbody td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #4a5568;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.bp4-html-table.modifier tbody td:first-child {
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.bp4-html-table.modifier tfoot {
+  background: rgba(248, 250, 252, 0.7);
+  border-top: 2px solid #93c5fd;
+}
+
+.bp4-html-table.modifier tfoot td {
+  padding: 20px;
+  border: none;
+  white-space: nowrap;
+}
+
+.bp4-html-table.modifier tfoot td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+.bp4-html-table.modifier tfoot td:last-child {
+  border-bottom-right-radius: 8px;
+}
+
+/* Button Styling */
+.bp4-html-table.modifier .bp4-button {
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 8px 16px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.bp4-html-table.modifier td .bp4-button {
+  margin-right: 8px;
+}
+
+.bp4-html-table.modifier td .bp4-button:last-child {
+  margin-right: 0;
+}
+
+.bp4-html-table.modifier .bp4-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Input Styling */
+.bp4-html-table.modifier .bp4-input {
+  border-radius: 6px;
+  border: 2px solid #bfdbfe;
+  padding: 10px 12px;
+  transition: all 0.2s ease;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.bp4-html-table.modifier .bp4-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  background: rgba(255, 255, 255, 1);
+}
+
+/* EditableText Styling */
+.bp4-html-table.modifier .bp4-editable-text {
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.bp4-html-table.modifier .bp4-editable-text:hover {
+  background: rgba(191, 219, 254, 0.3);
+}
+
+.bp4-html-table.modifier .bp4-editable-text.bp4-editable-text-editing {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .App {
+    max-width: 95%;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .App {
+    padding: 25px;
+  }
+
+  .App::before {
+    font-size: 24px;
+  }
+
+  .bp4-html-table.modifier thead th,
+  .bp4-html-table.modifier tbody td,
+  .bp4-html-table.modifier tfoot td {
+    padding: 14px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  .App {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .App::before {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .bp4-html-table.modifier {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .bp4-html-table.modifier thead th,
+  .bp4-html-table.modifier tbody td,
+  .bp4-html-table.modifier tfoot td {
+    padding: 12px 10px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .bp4-html-table.modifier .bp4-button {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  .bp4-html-table.modifier .bp4-input {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 15px 5px;
+  }
+
+  .App {
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .App::before {
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
+
+  .bp4-html-table.modifier thead th,
+  .bp4-html-table.modifier tbody td,
+  .bp4-html-table.modifier tfoot td {
+    padding: 10px 8px;
+    font-size: 11px;
+  }
+
+  .bp4-html-table.modifier .bp4-button {
+    padding: 5px 8px;
+    font-size: 10px;
+    margin: 2px;
+  }
+
+  .bp4-html-table.modifier .bp4-input {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+}
+
+/* Large screens (TV/Desktop) */
+@media (min-width: 1920px) {
+  .App {
+    max-width: 1400px;
+    padding: 50px;
+  }
+
+  .App::before {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .bp4-html-table.modifier thead th,
+  .bp4-html-table.modifier tbody td,
+  .bp4-html-table.modifier tfoot td {
+    padding: 20px 24px;
+    font-size: 16px;
+  }
+
+  .bp4-html-table.modifier .bp4-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .bp4-html-table.modifier .bp4-input {
+    padding: 12px 16px;
+    font-size: 16px;
+  }
+}
+
+/* Toaster positioning */
+.bp4-toast {
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
